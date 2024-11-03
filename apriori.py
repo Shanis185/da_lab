@@ -17,7 +17,10 @@ def get_freq_itemsets(data,min_support):
         for item in transactions:
             freq[(item,)]=freq.get[(item,),0]+1
 
-
+    for itemset in combination(transactions,2):
+        itemset=tuple(sorted(itemset))
+        freq[itemset]=freq.get[(itemset,),0]+1
+        
 
 
 
